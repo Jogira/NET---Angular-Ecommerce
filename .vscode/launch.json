@@ -2,19 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            // Use IntelliSense to find out which attributes exist for C# debugging
-            // Use hover for the description of the existing attributes
-            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+            // Existing configuration for launching a web application
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/holonet/API/bin/Debug/net7.0/API.dll",
+            "program": "${workspaceFolder}/API/bin/Debug/net7.0/API.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/holonet/API",
+            "cwd": "${workspaceFolder}/API",
             "stopAtEntry": false,
-            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            // Enable launching a web browser when ASP.NET Core starts.
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
@@ -25,6 +23,18 @@
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
             }
+        },
+        {
+            // New configuration for launching without attaching
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/API/bin/Debug/net7.0/API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/API",
+            "console": "internalConsole",
+            "stopAtEntry": false
         },
         {
             "name": ".NET Core Attach",
