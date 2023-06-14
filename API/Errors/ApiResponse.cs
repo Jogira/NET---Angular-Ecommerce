@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Controllers.Errors
+namespace API.Errors
 {
     public class ApiResponse
     {
-        public ApiReponse(int statusCode, string message = null)
+        public ApiResponse(int statusCode, string message = null)
         {
             StatusCode = statusCode;
             Message = message ?? GetDefaultMessageForStatusCode(statusCode);
@@ -26,7 +26,7 @@ namespace API.Controllers.Errors
                 404 => "Resource not found.",
                 500 => "Unexpected error has occured.",
                 _ => null
-            }
+            };
         }
     }
 }
