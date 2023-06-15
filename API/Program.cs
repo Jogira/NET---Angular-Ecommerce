@@ -49,6 +49,14 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseRouting(); // Add this line before UseAuthorization()
+
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("Access-Control-Allow-Origin", "https://localhost:4200");
+    await next.Invoke();
+});
+
 app.UseAuthorization();
 app.MapControllers();
 
