@@ -3,18 +3,33 @@ import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../shared/models/product';
 import { IBrand } from '../shared/models/brand';
 import { IType } from '../shared/models/productType';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShopParams } from '../shared/models/shopParams';
+
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.scss']
+  styleUrls: ['./shop.component.scss'],
+
 })
+
+
 export class ShopComponent implements OnInit {
   products!: IProduct[];
   brands!: IBrand[];
   types!: IType[];
-  brandIdSelected!: number;
-  typeIdSelected!: number;
+  shopParams = new ShopParams();
+  totalCount: number = 0;
+  sortOptions =
+    [
+      { name: 'Alphabetical', value: 'name' },
+      { name: 'Price: Low to High', value: 'priceAsc' },
+      { name: 'Price: High to Low', value: 'priceDesc' },
+    ]
+  page = 1;
+  pageSize = 6;
+
 
   constructor(private shopService: ShopService) {
   }
@@ -27,8 +42,11 @@ export class ShopComponent implements OnInit {
   }
 
   getProducts() {
-    this.shopService.getProducts(this.brandIdSelected, this.typeIdSelected).subscribe((response) => {
+    this.shopService.getProducts(this.shopParams).subscribe((response) => {
       this.products = response?.data ?? [];
+      this.shopParams.pageNumber = response?.pageIndex ?? 1;
+      this.shopParams.pageSize = response?.pageSize ?? 6;
+      this.totalCount = response?.count ?? 0;
     }, (error: any) => {
       console.log(error);
     })
@@ -53,13 +71,22 @@ export class ShopComponent implements OnInit {
   }
 
   onBrandSelected(brandId: number) {
-    this.brandIdSelected = brandId;
+    this.shopParams.brandId = brandId;
     this.getProducts();
   }
 
   onTypeSelected(typeId: number) {
-    this.typeIdSelected = typeId;
+    this.shopParams.typeId = typeId;
     this.getProducts();
   }
 
+  onSortSelected(sort: string) {
+    this.shopParams.sort = sort;
+    this.getProducts();
+  }
+
+  onPageChanged(event: any) {
+    this.shopParams.pageNumber = event;
+    this.getProducts();
+  }
 }
