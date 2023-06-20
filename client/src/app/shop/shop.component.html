@@ -31,7 +31,8 @@
                     [pageNumber]="this.shopParams.pageNumber"></app-paging-header>
 
                 <div class="d-flex align-items-end">
-                    <input (keyup.enter)="onSearch()" class="form-control" #search style="width: 300px" placeholder="Search" type="text">
+                    <input (keyup.enter)="onSearch()" class="form-control" #search style="width: 300px"
+                        placeholder="Search" type="text">
                     <button (click)="onSearch()" class="btn btn-outline-primary ms-2">Search</button>
                     <button (click)="onReset()" class="btn btn-outline-success ms-2">Reset</button>
                 </div>
@@ -45,8 +46,8 @@
 
             <span *ngIf="totalCount && totalCount > 0">
                 <div class="d-flex justify-content-center mt-3">
-                    <app-pager [pageSize]="shopParams.pageSize" [totalCount]="this.totalCount"
-                        (pageChange)="onPageChanged($event)"></app-pager>
+                    <app-pager [pageSize]="shopParams.pageSize" [totalCount]="this.totalCount" [(page)]="page"
+                        (pageChange)="onPageChanged($event)"> </app-pager>
                 </div>
             </span>
 
