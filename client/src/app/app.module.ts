@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { ShopModule } from './shop/shop.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     CoreModule,
     ShopModule,
-    NgbModule
+    NgbModule,
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
