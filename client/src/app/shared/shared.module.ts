@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { PagingHeaderComponent } from './components/paging-header/paging-header.component';
+import { PagerComponent } from './components/pager/pager.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [PagerComponent, PagingHeaderComponent,],
   imports: [
     CommonModule,
-    NgbPaginationModule
+    NgbPaginationModule,
   ],
-  exports: [NgbPaginationModule]
+  exports: [NgbPaginationModule, PagingHeaderComponent, PagerComponent]
 })
 export class SharedModule { }
-
-
