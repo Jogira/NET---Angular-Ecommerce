@@ -1,10 +1,10 @@
+import { ShopRoutingModule } from './shop-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShopComponent } from './shop.component';
 import { ProductsItemComponent } from './products-item/products-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductsDetailsComponent } from './products-details/products-details.component';
-import { RouterModule } from '@angular/router';
 
 
 
@@ -13,8 +13,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    ShopRoutingModule
   ],
-  exports: [ShopComponent]
 })
 export class ShopModule { }
