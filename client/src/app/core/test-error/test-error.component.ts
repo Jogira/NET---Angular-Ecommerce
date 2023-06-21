@@ -8,13 +8,16 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./test-error.component.scss']
 })
 export class TestErrorComponent implements OnInit {
-  constructor(private http: HttpClient) { }
+  baseUrl = environment.apiUrl;
+  validationErrors: any;
 
+
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  baseUrl = environment.apiUrl;
 
 
   get404Error() {
@@ -41,12 +44,12 @@ export class TestErrorComponent implements OnInit {
     })
   }
 
-
   get400ValidationError() {
     this.http.get(this.baseUrl + 'products/fortytwo').subscribe(response => {
       console.log(response);
     }, error => {
       console.log(error);
+      this.validationErrors = error.errors;
     })
   }
 }
