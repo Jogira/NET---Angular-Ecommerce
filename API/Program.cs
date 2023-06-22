@@ -5,6 +5,7 @@ using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,14 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericReposito
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddControllers();
 builder.Services.AddDbContext<StoreContext>(x => x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddSingleton<ConnectionMultiplexer>(c =>
+{
+    var configuaration = ConfigurationOptions.Parse(builder.Configuration
+    .GetConnectionString("Redis"), true);
+    return ConnectionMultiplexer.Connect(configuaration);
+})
+
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
