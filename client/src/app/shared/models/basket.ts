@@ -1,3 +1,4 @@
+import { TestBed } from '@angular/core/testing';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -7,7 +8,7 @@ export interface IBasket {
 }
 
 export interface IBasketItem {
-    id: number
+    id?: number
     productName: string
     price: number
     quantity: number
@@ -18,5 +19,5 @@ export interface IBasketItem {
 
 export class Basket implements IBasket {
     id = uuidv4();
-    items!: IBasketItem[];
+    items: IBasketItem[] = [];
 }
