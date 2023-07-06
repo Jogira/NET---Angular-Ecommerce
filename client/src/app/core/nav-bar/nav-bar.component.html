@@ -2,15 +2,16 @@
     class="d-flex flex-column flex-md-row align-items-center justify-content-between p-1 px-md-4 bg-primary border-bottom shadow-sm">
     <img src="/assets/images/logo.png" class="logo" style="max-height: 70px;" alt="logo" routerLink="/">
     <nav class="my-2 my-md-0 mr-md-3 text-uppercase" style="font-size: larger;">
-        <a class="p-2 text-decoration-none" routerLink="/" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="p-2 text-decoration-none" routerLink="/" routerLinkActive="active">Home</a>
         <a class="p-2 text-decoration-none" routerLink="/shop" routerLinkActive="active">Shop</a>
         <a class="p-2 text-decoration-none" routerLink="/test-error" routerLinkActive="active">Errors</a>
     </nav>
     <div class="d-flex align-items-center">
         <span routerLink="/basket" class="position-relative me-3">
             <i class="fa fa-shopping-cart fa-2x mr-5 text-dark"></i>
-            <span *ngIf="(basket$ | async) as basket" class="badge">{{basket.items.length}}</span>
+            <span *ngIf="(basket$ | async) as basket">
+                <span *ngIf="basket.items">{{basket.items.length}}</span>
+            </span>
         </span>
         <a routerLink="/account/login" class="btn btn-outline-secondary me-2">Login</a>
         <a routerLink="/account/register" class="btn btn-outline-secondary me-2">Sign up</a>
