@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from './basket/basket.service';
+import { AccountService } from './account/account.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,36 @@ import { BasketService } from './basket/basket.service';
 export class AppComponent implements OnInit {
   title = 'Holonet';
 
-  constructor(private basketService: BasketService) { }
+  constructor(private basketService: BasketService, private accountService: AccountService) { }
 
   ngOnInit(): void {
-    const basketId = localStorage.getItem('basket_id');
-    if (basketId)
+    this.loadBasket();
+    this.loadCurrentUser();
+  }
+
+  loadCurrentUser()
+  {
+    const token = localStorage.getItem('token');
+    if (token)
     {
-      this.basketService.getBasket(basketId).subscribe(() =>
+      this.accountService.loadCurrentUser(token).subscribe(() =>
       {
-        console.log("init basket");
-        
+        console.log('User has been loaded.');
       }, error =>
       {
+        console.log(error);
+      }
+      );
+    }
+  }
+
+  loadBasket() {
+    const basketId = localStorage.getItem('basket_id');
+    if (basketId) {
+      this.basketService.getBasket(basketId).subscribe(() => {
+        console.log("init basket");
+
+      }, error => {
         console.log(error);
       });
     }

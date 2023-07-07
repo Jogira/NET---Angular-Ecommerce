@@ -13,7 +13,14 @@
                 <span *ngIf="basket.items">{{basket.items.length}}</span>
             </span>
         </span>
-        <a routerLink="/account/login" class="btn btn-outline-secondary me-2">Login</a>
-        <a routerLink="/account/register" class="btn btn-outline-secondary me-2">Sign up</a>
+
+        <ng-container *ngIf="(currentUser$ | async) === null">
+            <a routerLink="/account/login" class="btn btn-outline-secondary me-2">Login</a>
+            <a routerLink="/account/register" class="btn btn-outline-secondary me-2">Sign up</a>
+        </ng-container>
+
+        <ng-container *ngIf="currentUser$ | async">
+            <a href="#">Welcome {{(currentUser$ | async)?.displayName }}</a>
+        </ng-container>
     </div>
 </div>
