@@ -5,6 +5,7 @@ import { BasketService } from 'src/app/basket/basket.service';
 import { IBasket } from 'src/app/shared/models/basket';
 import { IUser } from 'src/app/shared/models/user';
 
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -12,7 +13,7 @@ import { IUser } from 'src/app/shared/models/user';
 })
 export class NavBarComponent implements OnInit {
   basket$!: Observable<IBasket>;
-  currentUser$!: Observable<IUser>;
+  currentUser$!: Observable<IUser> | null;
 
   constructor(private basketService: BasketService, private accountService: AccountService) { }
 
@@ -21,4 +22,13 @@ export class NavBarComponent implements OnInit {
     this.basket$ = this.basketService.basket$;
     this.currentUser$ = this.accountService.currentUser$;
   }
+
+  logout() {
+    this.accountService.logout();
+  }
+
+  isObjectEmpty(obj: any): boolean {
+    return Object.keys(obj).length === 0;
+  }
+  
 }
