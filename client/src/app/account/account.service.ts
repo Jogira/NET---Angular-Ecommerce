@@ -51,6 +51,7 @@ export class AccountService {
       map((user: any) => {
         if (user) {
           localStorage.setItem('token', user.token);
+          this.currentUserSource.next(user);
         }
       })
     );
