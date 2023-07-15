@@ -5,20 +5,26 @@ import { environment } from 'src/environments/environment';
 import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
 import { v4 as uuidv4 } from 'uuid';
 import { IProduct } from '../shared/models/product';
+import { IDeliveryMethod } from '../shared/models/deliveryMethod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasketService {
   baseUrl = environment.apiUrl;
-
   private basketSource = new BehaviorSubject<IBasket>({} as IBasket);
-
   basket$ = this.basketSource.asObservable();
   private basketTotalSource = new BehaviorSubject<IBasketTotals>({} as IBasketTotals);
   basketTotal$ = this.basketTotalSource.asObservable();
+  shipping = 0;
 
   constructor(private http: HttpClient) { }
+
+  setShippingPrice(deliveryMethod: IDeliveryMethod)
+  {
+    this.shipping = deliveryMethod.price;
+    this.calculateTotals();
+  }
 
   getBasket(id: string) {
 
@@ -142,9 +148,17 @@ export class BasketService {
 
   private calculateTotals() {
     const basket = this.getCurrentBasketValue();
-    const shipping = 0;
+    const shipping = this.shipping;
     const subtotal = basket.items.reduce((a, b) => (b.price * b.quantity) + a, 0);
     const total = subtotal + shipping;
     this.basketTotalSource.next({ shipping, total, subtotal });
   }
+
+  deleteLocalBasket(id: string)
+  {
+    this.basketSource.next({} as IBasket);
+    this.basketTotalSource.next({} as IBasketTotals);
+    localStorage.removeItem('basket_id');
+  }
+
 }

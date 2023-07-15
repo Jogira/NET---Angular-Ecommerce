@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, ReplaySubject, map, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IUser } from '../shared/models/user';
 import { Router } from '@angular/router';
+import { IAddress } from '../shared/models/address';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,10 @@ export class AccountService {
       this.currentUserSource.next({} as IUser);
       return of(null); // Return an observable with a null value
     }
-  
+
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
-  
+
     return this.http.get(this.baseUrl + 'account', { headers }).pipe(
       map((user: any) => {
         if (user) {
@@ -35,7 +36,7 @@ export class AccountService {
       })
     );
   }
-  
+
 
   login(values: IUser) {
     return this.http.post(this.baseUrl + 'account/login', values).pipe(
@@ -67,6 +68,14 @@ export class AccountService {
 
   checkEmailExists(email: string) {
     return this.http.get(this.baseUrl + 'account/emailexists?email=' + email);
+  }
+
+  getUserAddress() {
+    return this.http.get<IAddress>(this.baseUrl + 'account/address');
+  }
+
+  updateUserAddress(address: IAddress) {
+    return this.http.put<IAddress>(this.baseUrl + 'account/address', address);
   }
 
 }
