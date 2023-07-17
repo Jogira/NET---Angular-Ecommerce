@@ -1,2 +1,2 @@
-<ngb-pagination [pageSize]="pageSize" [collectionSize]="totalCount" [(page)]="page" (pageChange)="onPagerChange($event)"
+<ngb-pagination [pageSize]="pageSize" [ngModel]="pageNumber" [collectionSize]="totalCount" [(page)]="page" (pageChange)="onPagerChange($event)"
     [boundaryLinks]="true"></ngb-pagination>

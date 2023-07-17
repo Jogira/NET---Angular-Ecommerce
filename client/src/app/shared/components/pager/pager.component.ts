@@ -9,6 +9,7 @@ export class PagerComponent implements OnInit {
   @Input() page: number = 1;
   @Input() totalCount!: number;
   @Input() pageSize!: number;
+  @Input() pageNumber!: number;
   @Output() pageChange = new EventEmitter<number>;
 
   constructor() { }
