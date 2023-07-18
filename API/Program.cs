@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
 
@@ -27,10 +28,10 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericReposito
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddControllers();
-builder.Services.AddDbContext<StoreContext>(x => x.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<StoreContext>(x => x.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddDbContext<AppIdentityDbContext>(x =>
 {
-    x.UseSqlite(builder.Configuration.GetConnectionString("IdentityConnection"));
+    x.UseNpgsql(builder.Configuration.GetConnectionString("IdentityConnection"));
 });
 
 
@@ -41,6 +42,8 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
     return ConnectionMultiplexer.Connect(configuration);
 });
 
+// Enable legacy timestamp behavior
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
@@ -115,11 +118,26 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "Content")
+    ),
+    RequestPath = "/content"
+});
+
 app.UseCors("CorsPolicy"); // Add this line before UseRouting()
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapFallbackToController("Index", "Fallback");
+});
+
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())

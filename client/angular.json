@@ -9,7 +9,7 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      },
+    },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client",
+            "outputPath": "../API/wwwroot",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,11 +30,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "./node_modules/font-awesome/css/font-awesome.min.css",
-              "node_modules/ngx-spinner/animations/timer.css",
-              "./node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -53,6 +48,9 @@
                   "maximumError": "4kb"
                 }
               ],
+              "optimization": true,
+              "aot": true,
+              "sourceMap": false,
               "outputHashing": "all"
             },
             "development": {
