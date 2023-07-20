@@ -5,11 +5,6 @@
         <app-text-input formControlName="email" [label]="'Email Address'"></app-text-input>
         <app-text-input formControlName="password" [type]="'password'" [label]="'Password'"></app-text-input>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
         <button [disabled]="loginForm.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     </form>
 

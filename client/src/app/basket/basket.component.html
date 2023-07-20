@@ -19,9 +19,18 @@
                             <app-order-totals *ngIf="(basketTotals$ | async) as basketTotals"
                                 [shippingPrice]="basketTotals.shipping" [subtotal]="basketTotals.subtotal"
                                 [total]="basketTotals.total"></app-order-totals>
-                            <a routerLink="/checkout" class="btn btn-outline-primary py-2 btn-block">
-                                Proceed to checkout
-                            </a>
+                            <ng-container *ngIf="(currentUser$ | async) as currentUser">
+                                <ng-container *ngIf="!currentUser || isObjectEmpty(currentUser)">
+                                    <a routerLink="/account/login" class="btn btn-outline-primary py-2 btn-block">
+                                        Login to checkout
+                                    </a>
+                                </ng-container>
+                                <ng-container *ngIf="currentUser && !isObjectEmpty(currentUser)">
+                                    <a routerLink="/checkout" class="btn btn-outline-primary py-2 btn-block">
+                                        Proceed to checkout
+                                    </a>
+                                </ng-container>
+                            </ng-container>
                         </div>
                     </div>
                 </div>

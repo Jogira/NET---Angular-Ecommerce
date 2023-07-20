@@ -11,8 +11,19 @@
 @import 'bootstrap/scss/bootstrap';
 
 
+:root {
+    --holoblue: #27c7ffab;
+    --hologray: #ffffffd1;
+    --holoslate: #c9c9c971;
+    --hologreen-text: #22ff87;
+    --holoblue-text: #34c9fe;
+    --holostar: rgb(255, 238, 0);
+    --holoactive: rgb(0, 196, 114);
+}
+
 body {
-    background-image: url('/assets/images/holonetbg.png');
+    font-family: 'Gothic A1';
+    background-image: url('/assets/images/star-overlay.png'), url('/assets/images/holonetbg.png');
     background-repeat: repeat;
 }
 
@@ -24,8 +35,9 @@ body {
 }
 
 label.xng-breadcrumb-trail {
+    font-size: 20px;
     margin-bottom: 0;
-    color: orange;
+    color: rgb(0, 204, 10);
 }
 
 .xng-breadcrumb-separator {
@@ -34,4 +46,13 @@ label.xng-breadcrumb-trail {
 
 .StripeElement {
     height: 3.125em;
+}
+
+.specialText {
+    color: linear-gradient(180deg, #3be5ffde, #2ac5fe8a, #4fa2f000);
+}
+
+a:hover {
+    color: rgb(34, 146, 0) !important;
+    /* Change the color to blue on hover */
 }

@@ -1,19 +1,27 @@
-<ngb-carousel>
+<ngb-carousel [showNavigationArrows]=false>
     <ng-template ngbSlide>
-        <img src="assets/images/hero1.jpg" alt="first slide" style="display: block; width: 100%">
+        <img class="center" src="assets/images/hero1.jpg" alt="first slide">
     </ng-template>
 
     <ng-template ngbSlide>
-        <img src="assets/images/hero2.jpg" alt="first slide" style="display: block; width: 100%">
+        <img class="center" src="assets/images/hero2.jpg" alt="second slide">
     </ng-template>
 
     <ng-template ngbSlide>
-        <img src="assets/images/hero3.jpg" alt="first slide" style="display: block; width: 100%">
+        <img class="center" src="assets/images/hero3.jpg" alt="third slide">
     </ng-template>
 </ngb-carousel>
 
 <section class="featured">
     <div class="d-flex justify-content-center pt-4">
-        <h1>Welcome to the shop!</h1>
+        <h1><strong>Welcome to <span style="color: var(--holoblue-text);">Holo</span><span
+                    style="color: var(--hologreen-text);">net!</span></strong><br></h1>
+
+    </div>
+    <div class="d-flex justify-content-center pt-2">
+        <h2 style="color:#666666"><i>Your one stop fake shop for things you can't buy.</i></h2>
+    </div>
+    <div class="d-flex justify-content-center pt-2">
+        <h3 style="color:#666666">Seriously, this is a demo website.</h3>
     </div>
 </section>

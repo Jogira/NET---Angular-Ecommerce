@@ -3,3 +3,7 @@ bin
 appsettings.json
 *.db
 node_modules/
+publish/
+publish
+wwwroot/
+.vscode/settings.json

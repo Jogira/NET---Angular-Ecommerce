@@ -2,15 +2,21 @@
     class="d-flex flex-column flex-md-row align-items-center justify-content-between p-1 px-md-4 bg-primary border-bottom shadow-sm">
     <img src="/assets/images/logo.png" class="logo" style="max-height: 70px;" alt="logo" routerLink="/">
     <nav class="my-2 my-md-0 mr-md-3 text-uppercase" style="font-size: larger;">
-        <a class="p-2 text-decoration-none" routerLink="/" routerLinkActive="active">Home</a>
+        <a class="p-2 text-decoration-none" routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Home</a>
         <a class="p-2 text-decoration-none" routerLink="/shop" routerLinkActive="active">Shop</a>
-        <a class="p-2 text-decoration-none" routerLink="/test-error" routerLinkActive="active">Errors</a>
+        <!-- <a class="p-2 text-decoration-none" routerLink="/test-error" routerLinkActive="active">Errors</a> -->
+        <a class="p-2 text-decoration-none" routerLink="/about" routerLinkActive="active">About</a>
     </nav>
     <div class="d-flex align-items-center">
+        <a href="https://github.com/Jogira/holonet" target="_blank">
+            <i class="fa fa-github me-3 github-icon" style="font-size: 35px;"></i>
+        </a>
+
         <span routerLink="/basket" class="position-relative me-3">
             <i class="fa fa-shopping-cart fa-2x mr-5 text-dark"></i>
             <span *ngIf="(basket$ | async) as basket">
-                <span *ngIf="basket.items">{{basket.items.length}}</span>
+                <span class="badge" *ngIf="basket.items">{{basket.items.length}}</span>
             </span>
         </span>
 
@@ -24,7 +30,8 @@
                 <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
                     <button type="button" class="btn me-2" id="dropdownManual" ngbDropdownAnchor
                         (focus)="myDrop.open()">
-                        <strong>Welcome, {{ currentUser.displayName }}</strong>
+                        <strong>Hello <span style="color: var(--hologreen-text)">{{ currentUser.displayName
+                                }}!</span></strong>
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownManual">
                         <button ngbDropdownItem>

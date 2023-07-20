@@ -7,9 +7,11 @@ import { ServerErrorComponent } from './core/server-error/server-error.component
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { AccountService } from './account/account.service';
 import { AuthGuard } from './core/guards/auth.guard';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { breadcrumb: 'Home' } },
+  { path: 'about', component: AboutComponent, data: { breadcrumb: 'About' } },
   { path: 'test-error', component: TestErrorComponent, data: { breadcrumb: 'Test Errors' } },
   { path: 'server-error', component: ServerErrorComponent, data: { breadcrumb: 'Server Error' } },
   { path: 'not-found', component: NotFoundComponent, data: { breadcrumb: 'Not Found' } },
@@ -19,7 +21,7 @@ const routes: Routes = [
     path: 'checkout', canActivate: [AuthGuard], loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule), data: { breadcrumb: 'Checkout' }
   },
   {
-    path: 'orders', 
+    path: 'orders',
     canActivate: [AuthGuard],
     loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule),
     data: { breadcrumb: 'Orders' }
