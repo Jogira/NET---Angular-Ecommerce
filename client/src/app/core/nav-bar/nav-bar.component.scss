@@ -28,3 +28,15 @@ a {
 .github-icon:hover {
     color: #6e5494 !important;
 }
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.dropdown-item:active {
+    background-color: #27c5ff;
+}

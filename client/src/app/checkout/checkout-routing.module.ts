@@ -5,9 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CheckoutSuccessComponent } from './checkout-success/checkout-success.component';
 
 const routes: Routes = [
-  {path: '', component: CheckoutComponent},
-  {path: 'success', component: CheckoutSuccessComponent}
-]
+  { path: '', component: CheckoutComponent },
+  {
+    path: 'success',
+    component: CheckoutSuccessComponent,
+    data: {
+      breadcrumb: (route: any) => 'Success' // Use a function to return the capitalized breadcrumb
+    }
+  }
+];
 
 @NgModule({
   declarations: [],

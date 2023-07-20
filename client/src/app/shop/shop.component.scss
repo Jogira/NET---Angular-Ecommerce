@@ -10,11 +10,16 @@
 
     &.active {
         border-radius: 10px;
+        background-color: var(--hologreen-text);
+
     }
 
     &:not(.active):hover {
-        color: #fff;
-        background-color: rgba(233, 86, 32, 0.705);
+        background-color: var(--holoblue);
         border-radius: 10px;
     }
+}
+
+.text-warning {
+    color: rgb(0, 204, 10) !important;
 }

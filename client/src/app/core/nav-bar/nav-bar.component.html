@@ -1,5 +1,5 @@
 <div
-    class="d-flex flex-column flex-md-row align-items-center justify-content-between p-1 px-md-4 bg-primary border-bottom shadow-sm">
+    class="navbar-container d-flex flex-column flex-md-row align-items-center justify-content-between p-1 px-md-4 bg-primary border-bottom shadow-sm">
     <img src="/assets/images/logo.png" class="logo" style="max-height: 70px;" alt="logo" routerLink="/">
     <nav class="my-2 my-md-0 mr-md-3 text-uppercase" style="font-size: larger;">
         <a class="p-2 text-decoration-none" routerLink="/" routerLinkActive="active"
@@ -9,8 +9,8 @@
         <a class="p-2 text-decoration-none" routerLink="/about" routerLinkActive="active">About</a>
     </nav>
     <div class="d-flex align-items-center">
-        <a href="https://github.com/Jogira/holonet" target="_blank">
-            <i class="fa fa-github me-3 github-icon" style="font-size: 35px;"></i>
+        <a href="https://github.com/Jogira/holonet" target="_blank" class="github-icon">
+            <i class="fa fa-github me-3 " style="font-size: 35px;"></i>
         </a>
 
         <span routerLink="/basket" class="position-relative me-3">
@@ -22,8 +22,8 @@
 
         <ng-container *ngIf="(currentUser$ | async) as currentUser">
             <ng-container *ngIf="!currentUser || isObjectEmpty(currentUser)">
-                <a routerLink="/account/login" class="btn btn-outline-secondary me-2">Login</a>
-                <a routerLink="/account/register" class="btn btn-outline-secondary me-2">Sign up</a>
+                <a routerLink="/account/login" class="btn btn-outline-holoprimary me-2">Login</a>
+                <a routerLink="/account/register" class="btn btn-outline-holoprimary me-2">Sign up</a>
             </ng-container>
 
             <ng-container *ngIf="currentUser && !isObjectEmpty(currentUser)">

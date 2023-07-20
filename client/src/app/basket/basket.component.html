@@ -1,6 +1,9 @@
-<div class="container mt-2">
-    <div *ngIf="(basket$ | async) === null">
-        <p>There are no items in your basket</p>
+<div class="container white-box">
+    <!-- Instead of comparing with null, check for an empty array -->
+    <div *ngIf="(basket$ | async) as basket">
+        <span *ngIf="!basket.items">
+            <h2>There are no items in your basket.</h2>
+        </span>
     </div>
 
     <div *ngIf="basket$ | async as basket">
@@ -21,12 +24,12 @@
                                 [total]="basketTotals.total"></app-order-totals>
                             <ng-container *ngIf="(currentUser$ | async) as currentUser">
                                 <ng-container *ngIf="!currentUser || isObjectEmpty(currentUser)">
-                                    <a routerLink="/account/login" class="btn btn-outline-primary py-2 btn-block">
+                                    <a routerLink="/account/login" class="btn btn-outline-holoprimary py-2 btn-block">
                                         Login to checkout
                                     </a>
                                 </ng-container>
                                 <ng-container *ngIf="currentUser && !isObjectEmpty(currentUser)">
-                                    <a routerLink="/checkout" class="btn btn-outline-primary py-2 btn-block">
+                                    <a routerLink="/checkout" class="btn btn-outline-holoprimary py-2 btn-block">
                                         Proceed to checkout
                                     </a>
                                 </ng-container>

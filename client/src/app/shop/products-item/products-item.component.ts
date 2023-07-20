@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IProduct } from 'src/app/shared/models/product';
 
@@ -10,7 +11,7 @@ import { IProduct } from 'src/app/shared/models/product';
 export class ProductsItemComponent implements OnInit {
   @Input() product!: IProduct;
 
-  constructor(private basketService: BasketService) { }
+  constructor(private basketService: BasketService, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -18,5 +19,6 @@ export class ProductsItemComponent implements OnInit {
 
   addItemToBasket() {
     this.basketService.addItemToBasket(this.product);
+    this.toastr.success('Added to basket.');
   }
 }

@@ -2,7 +2,7 @@
     <input
         [ngClass]="(controlDir && controlDir.control && controlDir.control.touched) ? !controlDir.control.valid ? 'is-invalid' : 'is-valid' : null"
         [type]="type" (input)="onChange($event.target.value)" (blur)="onTouched()" id="{{label}}" #input
-        class="form-control mb-3" id="floatingInput" placeholder="{{label}}" style="width: 400px;">
+        class="form-control mb-3 fw-bold" id="floatingInput" placeholder="{{label}}" style="width: 400px;">
 
     <div *ngIf="controlDir && controlDir.control && controlDir.control.status === 'PENDING'"
         class="fa fa-spinner fa-spin loader">

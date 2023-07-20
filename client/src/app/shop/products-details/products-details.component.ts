@@ -4,6 +4,7 @@ import { IProduct } from 'src/app/shared/models/product';
 import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { BasketService } from 'src/app/basket/basket.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products-details',
@@ -15,7 +16,7 @@ export class ProductsDetailsComponent {
   quantity = 1;
 
   constructor(private shopService: ShopService, private activeRoute: ActivatedRoute,
-    private bcService: BreadcrumbService, private basketService: BasketService) {
+    private bcService: BreadcrumbService, private basketService: BasketService, private toastr: ToastrService) {
     this.bcService.set('@productDetails', ' ');
   }
 
@@ -25,6 +26,7 @@ export class ProductsDetailsComponent {
 
   addItemToBasket() {
     this.basketService.addItemToBasket(this.product, this.quantity);
+    this.toastr.success('Added to basket.');
   }
 
   incrementQuantity() {

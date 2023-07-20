@@ -1,0 +1,12 @@
+.background-image-center {
+    background-image: url('/assets/images/nousagihead.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}

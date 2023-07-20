@@ -13,7 +13,7 @@
 
 :root {
     --holoblue: #27c7ffab;
-    --hologray: #ffffffd1;
+    --hologray: #ffffff;
     --holoslate: #c9c9c971;
     --hologreen-text: #22ff87;
     --holoblue-text: #34c9fe;
@@ -22,10 +22,13 @@
 }
 
 body {
+    padding-top: 75px;
     font-family: 'Gothic A1';
     background-image: url('/assets/images/star-overlay.png'), url('/assets/images/holonetbg.png');
     background-repeat: repeat;
 }
+
+
 
 
 .xng-breadcrumb-root {
@@ -48,11 +51,88 @@ label.xng-breadcrumb-trail {
     height: 3.125em;
 }
 
-.specialText {
-    color: linear-gradient(180deg, #3be5ffde, #2ac5fe8a, #4fa2f000);
-}
-
 a:hover {
     color: rgb(34, 146, 0) !important;
-    /* Change the color to blue on hover */
+}
+
+.btn-outline-holoprimary,
+.btn-holoprimary {
+    background-color: var(--holoactive);
+    color: white;
+    border-color: rgba(255, 255, 255, 0);
+
+    &:hover {
+        background-color: var(--hologreen-text);
+
+        /* Change the background color to green on hover */
+        color: black;
+        /* Change the text color to white on hover */
+        border-color: rgba(255, 255, 255, 0);
+
+        /* Change the border color to green on hover */
+    }
+}
+
+.btn-outline-holosuccess {
+    background-color: rgb(255, 90, 117);
+    color: white;
+    border-color: rgba(255, 255, 255, 0);
+
+    &:hover {
+        background-color: rgb(255, 117, 140);
+
+        /* Change the background color to green on hover */
+        color: black;
+        /* Change the text color to white on hover */
+        border-color: rgba(255, 255, 255, 0);
+
+        /* Change the border color to green on hover */
+    }
+}
+
+.fa-shopping-cart:hover {
+    color: var(--holoactive) !important;
+}
+
+.fa-trash:hover {
+    color: red;
+}
+
+.fa-plus-circle:hover,
+.fa-minus-circle:hover {
+    color: gold !important;
+}
+
+.page-link {
+    background-color: var(--hologray);
+    color: var(--holoblue);
+}
+
+.page-link.active,
+.active>.page-link {
+    background-color: var(--hologreen-text);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.prod-link {
+    color: rgb(109, 94, 94);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--hologreen-text);
+    }
+}
+
+.white-box {
+    background-color: rgba(240, 248, 255, 0.562);
+    border-radius: 15px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: var(--holoactive);
+    border-radius: 5px;
 }

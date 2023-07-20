@@ -1,11 +1,10 @@
 <div class="mt-4" [formGroup]="checkoutForm">
     <div class="d-flex justify-content-between align-items-center">
         <h4>Shipping Address</h4>
-        <button
-        [disabled]="!checkoutForm.get('addressForm')?.valid 
-        || !checkoutForm.get('addressForm')?.dirty"
-        (click)="saveUserAddress()" class="btn btn-outline-success mb-3">
-            Save as default address.
+        <button [disabled]="!checkoutForm.get('addressForm')?.valid 
+        || !checkoutForm.get('addressForm')?.dirty" (click)="saveUserAddress()"
+            class="btn btn-outline-holosuccess mb-3">
+            Save as default address
         </button>
     </div>
     <div class="row" formGroupName="addressForm">
@@ -31,10 +30,10 @@
 </div>
 
 <div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
-    <button class="btn btn-outline-primary" routerLink="/basket">
-        <i class="fa fa-angle-left"> </i> Back to Basket
+    <button class="btn btn-outline-holoprimary" routerLink="/basket">
+        <i class="fa fa-angle-left"> </i> Back to basket
     </button>
-    <button [disabled]="checkoutForm.get('addressForm')?.invalid" class="btn btn-primary" cdkStepperNext>
-        Go to Delivery <i class="fa fa-angle-right"> </i>
+    <button [disabled]="checkoutForm.get('addressForm')?.invalid" class="btn btn-holoprimary" cdkStepperNext>
+        Go to delivery <i class="fa fa-angle-right"> </i>
     </button>
 </div>

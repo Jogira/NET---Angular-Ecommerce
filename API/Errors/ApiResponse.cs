@@ -22,7 +22,7 @@ namespace API.Errors
             return statusCode switch
             {
                 400 => "You've made a bad request.",
-                401 => "You are not authorized.",
+                401 => "Wrong username or password.",
                 404 => "Resource not found.",
                 500 => "Unexpected error has occured.",
                 _ => null

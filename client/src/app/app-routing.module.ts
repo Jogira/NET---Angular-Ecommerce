@@ -8,6 +8,8 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { AccountService } from './account/account.service';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AboutComponent } from './about/about.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutSuccessComponent } from './checkout/checkout-success/checkout-success.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { breadcrumb: 'Home' } },
@@ -18,7 +20,7 @@ const routes: Routes = [
   { path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule), data: { breadcrumb: 'Shop' } },
   { path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule), data: { breadcrumb: 'Basket' } },
   {
-    path: 'checkout', canActivate: [AuthGuard], loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule), data: { breadcrumb: 'Checkout' }
+    path: 'checkout', canActivate: [AuthGuard], loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule), data: { breadcrumb: () => 'Checkout' }
   },
   {
     path: 'orders',
