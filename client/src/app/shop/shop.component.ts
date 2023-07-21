@@ -34,7 +34,7 @@ export class ShopComponent implements OnInit {
   }
 
   getProducts(useCache = false) {
-    this.shopService.getProducts(useCache).subscribe(response => {
+    this.shopService.getProducts(false).subscribe(response => {
       this.products = response.data;
       this.totalCount = response.count;
     }, error => {

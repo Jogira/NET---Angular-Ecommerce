@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./pager.component.scss']
 })
 export class PagerComponent implements OnInit {
-  @Input() page: number = 1;
+  @Input() page: number = 0;
   @Input() totalCount!: number;
   @Input() pageSize!: number;
   @Input() pageNumber!: number;

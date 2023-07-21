@@ -1,26 +1,22 @@
 [
   {
     "Id": 1,
-    "Name": "Angular"
+    "Name": "Hololive"
   },
   {
     "Id": 2,
-    "Name": "NetCore"
+    "Name": "Good Smile"
   },
   {
     "Id": 3,
-    "Name": "VS Code"
+    "Name": "Sony Music"
   },
   {
     "Id": 4,
-    "Name": "React"
+    "Name": "Bandcamp"
   },
   {
     "Id": 5,
-    "Name": "Typescript"
-  },
-  {
-    "Id": 6,
-    "Name": "Redis"
+    "Name": "Nintendo"
   }
 ]

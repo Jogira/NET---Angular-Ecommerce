@@ -1,146 +1,194 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
+    "Name": "Hololive Takodachi Plushie",
+    "Description": "Wah! A soft takodachi for all you Ninomae Ina'Nis fans. Very rotund and useless.",
+    "Price": 25,
+    "PictureUrl": "images/products/takodachi.png",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
   {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
+    "Name": "Hololive Death-Sensei Plushie",
+    "Description": "A soft deadbeat for all you Mori Calliope fans. EXTRA rotund and MEGA useless.",
+    "Price": 25,
+    "PictureUrl": "images/products/death.png",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
   {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
+    "Name": "Hololive Bubba Plushie",
+    "Description": "Bow wow~, it's Bubba! A soft Bubba for all you Amelia Watson fans.",
+    "Price": 20,
+    "PictureUrl": "images/products/bubba.png",
     "ProductTypeId": 1,
-    "ProductBrandId": 2
+    "ProductBrandId": 1
   },
   {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
+    "Name": "Hololive Kotori Plushie",
+    "Description": "A soft phoenix for all 5 Takanashi Kiara fans out there.",
+    "Price": 15,
+    "PictureUrl": "images/products/kotori.png",
     "ProductTypeId": 1,
-    "ProductBrandId": 2
+    "ProductBrandId": 1
   },
   {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Hololive Bloop Plushie",
+    "Description": "I do not like Gura. あ",
+    "Price": 1,
+    "PictureUrl": "images/products/bloop.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Bondrewd Figure",
+    "Description": "Oya oya, 素晴らし! 1/6 scale figure of Bondrewd the Novel in all of his scientific glory.",
     "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 4
+    "PictureUrl": "images/products/bondrewd.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
   },
   {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
+    "Name": "Bulborb Plushie",
+    "Description": "bulborb",
+    "Price": 15,
+    "PictureUrl": "images/products/bulborb.png",
     "ProductTypeId": 1,
     "ProductBrandId": 5
   },
   {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Name": "Corgi Figure",
+    "Description": "Sadly not a real corgi, but maybe this 2 inch tall statue of one can replace the hole in your heart?",
+    "Price": 5,
+    "PictureUrl": "images/products/corgi.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Space Dandy Figure",
+    "Description": "1/7 scale figure of Space Dandy! He's a Dandy Guy. In Space. On Holonet.",
+    "Price": 120,
+    "PictureUrl": "images/products/dandy.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "'deathbrain - fantasy noises & perfect delusions' CD",
+    "Description": "A compact disc full of noisy music for strange people.",
     "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
+    "PictureUrl": "images/products/deathbrain.png",
     "ProductTypeId": 2,
     "ProductBrandId": 4
   },
   {
-    "Name": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
+    "Name": "'Kinoko Teikoku - Eureka' CD",
+    "Description": "A compact disc full of possibly the best music known to man.",
+    "Price": 50,
+    "PictureUrl": "images/products/eureka.png",
     "ProductTypeId": 2,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
-    "ProductTypeId": 4,
     "ProductBrandId": 3
   },
   {
-    "Name": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
-    "ProductTypeId": 4,
+    "Name": "Korone Plushie That Steals Your Money",
+    "Description": "Your money. Fork it over. ᗜωᗜ",
+    "Price": 30,
+    "PictureUrl": "images/products/korone.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "'Takako Mamiya - Love Trip' Vinyl",
+    "Description": "Old but gold j-pop vinyl record that's perfect for cruising through the city on a cold night. If only you could fit a record player in your car.",
+    "Price": 30,
+    "PictureUrl": "images/products/love-trip.png",
+    "ProductTypeId": 2,
     "ProductBrandId": 3
   },
   {
-    "Name": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Green React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 6
-  },
-  {
-    "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
+    "Name": "Pekora Figure",
+    "Description": "Tiny nenodroid of the chaotic Usada Pekora. Comes with swappable face plates and dynamic poses!",
+    "Price": 55,
+    "PictureUrl": "images/products/pekora.png",
     "ProductTypeId": 3,
     "ProductBrandId": 1
   },
   {
-    "Name": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
+    "Name": "Blue Pikmin Clay Figure",
+    "Description": "It's so over.",
+    "Price": 15,
+    "PictureUrl": "images/products/pikmin.png",
     "ProductTypeId": 3,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Porygon Plushie",
+    "Description": "The perfect plushie for programmer Pokemon fans. Like me. This is my favorite Pokemon. It is a sentient computer virus.",
+    "Price": 5,
+    "PictureUrl": "images/products/porygon.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Punpun Plushie",
+    "Description": "A plushie of a small bird that cries a lot.",
+    "Price": 10,
+    "PictureUrl": "images/products/punpun.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "Spike Spiegel Figure",
+    "Description": "1/6 scale statue of the coolest cowboy this side of space.",
+    "Price": 100,
+    "PictureUrl": "images/products/spike.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "'Hoshimachi Suisei - Still Still Stellar' CD",
+    "Description": "I have never heard a single song from this album. I just needed to add some product variation.",
+    "Price": 15,
+    "PictureUrl": "images/products/suisei.png",
+    "ProductTypeId": 2,
     "ProductBrandId": 1
+  },
+  {
+    "Name": "'T e l e p a t h - Dream' Cassette",
+    "Description": "Vaporwave ambience music on antiquated technology from the distant past of 2018.",
+    "Price": 200,
+    "PictureUrl": "images/products/telepath.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Ancient & Mysterious German Artifact",
+    "Description": "A relic of one of the greatest game developers of all time. 🥚",
+    "Price": 1000,
+    "PictureUrl": "images/products/tommy.png",
+    "ProductTypeId": 3,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "'Kinoko Teikoku - Uzu Ni Naru' CD",
+    "Description": "Sad shoegaze to sit by the ocean waves with.",
+    "Price": 50,
+    "PictureUrl": "images/products/uzuninaru.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "VA-11 HALL-A OST CD",
+    "Description": "The soundtrack to the hit video game 'VA-11 HALL-A', burned onto a CD for your convenience.",
+    "Price": 50,
+    "PictureUrl": "images/products/vall.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "'C418 - Zweitonegoismus' CD",
+    "Description": "If you know, you know.",
+    "Price": 2,
+    "PictureUrl": "images/products/zweitonegoismus.png",
+    "ProductTypeId": 2,
+    "ProductBrandId": 4
   }
 ]

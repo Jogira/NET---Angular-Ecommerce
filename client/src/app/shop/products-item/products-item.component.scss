@@ -12,6 +12,15 @@
     }
 }
 
+.bg-item,
+.card {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.card-body {
+    background-color: var(--hologray);
+}
+
 .hover-overlay {
     position: absolute;
     width: 100%;
@@ -23,19 +32,16 @@
     transition: all 0.5s;
 
 
-    & button 
-    {
+    & button {
         z-index: 100;
         transition: all 0.5s;
     }
 
-    & button:first-of-type
-    {
+    & button:first-of-type {
         transform: translateX(-20px);
     }
 
-    & button:last-of-type
-    {
+    & button:last-of-type {
         transform: translateX(20px);
     }
 }

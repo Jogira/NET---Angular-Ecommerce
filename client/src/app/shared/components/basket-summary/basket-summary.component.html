@@ -24,8 +24,8 @@
                 <tr *ngFor="let item of items">
                     <th scope="row">
                         <div class="p-2">
-                            <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid me-2"
-                                style="max-height: 50px;">
+                            <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid me-2 mb-4"
+                                style="max-height: 50px; border-radius: 5px;">
                             <div class="ml-3 d-inline-block text-center">
                                 <h5 class="m-0">
                                     <a routerLink="/shop/{{item.id || item.productId}}" target="_blank"
